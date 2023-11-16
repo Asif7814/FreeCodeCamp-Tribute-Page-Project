@@ -154,6 +154,12 @@ nav a {
     padding: inherit;
 }
 
+.image img {
+    width: 100%;
+    
+    margin: 0;
+}
+
 .textbox {
     /*temp border*/
     border: 2px solid purple;

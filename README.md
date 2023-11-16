@@ -1,0 +1,1 @@
+This is a simple website (informational) about Metro Boomin so that I can develop my HTML & CSS knowledge.

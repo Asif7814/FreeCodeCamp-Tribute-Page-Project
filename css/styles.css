@@ -2,19 +2,33 @@
 Note to Self:
 - fonts are temporary at the moment
 - colors may be temporary too for now
+- can set border of img to 0 to reset alignment options
+- use border radius to round edges
 
 TASKS 
 - WORK ON ONE SECTION AT A TIME, IGNORE THE REST
 
     CURRENT SECTION: HERO 
-    - FIGURE OUT HOW TO ADD METRO BOOMIN BACKGROUND IMAGE TO HERO SECTION
-    - FORMAT THE DIVS PROPERLY (EACH TAKE UP 50% WIDTH)
-        - SOCIAL MEDIA; VERTICALLY ALIGNED IN THE CENTER, HORIZONTALLY JUSTIFIED ON THE LEFT SIDE (ALL IN ONE COLUMN) WITH PADDING ON LEFT
-        - TEXT; VERTICALLY ALIGNED IN THE CENTER, HORIZONTALLY JUSTIFIED ON RIGHT SIDE (METRO BOOMIN (BIG), AKA REAL NAME (SMALL) ) WITH PADDING ON RIGHT
+    - *FIGURE OUT HOW TO ADD METRO BOOMIN BACKGROUND IMAGE TO HERO SECTION
+    - [DONE] FORMAT THE DIVS PROPERLY (EACH TAKE UP 50% WIDTH)
+        - [DONE] SOCIAL MEDIA; VERTICALLY ALIGNED IN THE CENTER, HORIZONTALLY JUSTIFIED ON THE LEFT SIDE (ALL IN ONE COLUMN) WITH PADDING ON LEFT
+        - [ALMOST DONE] TEXT; VERTICALLY ALIGNED IN THE CENTER, HORIZONTALLY JUSTIFIED ON RIGHT SIDE (METRO BOOMIN (BIG), AKA REAL NAME (SMALL) ) WITH PADDING ON RIGHT
+            - SMALL PROBLEM: FIGURE OUT HOW TO MAKE SURE THAT REAL NAME IS ALIGNED WITH LEFT OF ARTIST NAME
+
+
+    NEXT SECTION: NAVIGATION BAR - FIX RESPONISVENESS
+    - IF VIEWPORT WIDTH IS LESS THAN 700PX, TURN INTO DROPDOWN NAV WITH TABS LISTED VERTICALLY (3 LINE ICON)
 
 REMEMBER
 - USE MEASUREMENTS THAT WILL BE RESPONSIVE TO ALL DEVICE SIZES (AKA THINK ABOUT USING % OR EM INSTEAD OF JUST PX)
 */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
 
 html {
     font-family: 'Verdana';
@@ -22,14 +36,14 @@ html {
 }
 
 body {
-    margin: 0;
+    width: 100%;
 }
 
 /*NAVIGATION BAR*/
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center; /*this vertically centers your element*/
+    align-items: center;
 
     width: 100%;
     height: 40px;
@@ -88,65 +102,74 @@ nav a {
 /*HERO*/
 .hero {
     width: 100%;
-    height: 400px;
-
+    height: fit-content;
+    
+    display: flex;
+    justify-content: center;
     align-items: center;
+
+    background-color: rgb(110, 15, 15);/*temp*/
+
+    /*
     background-image: url("images/metroboomin-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    */
 
-    padding-top: 50px;
+    padding: 5vh 2.5vw 3vh 0;
 }
 
-.hero > div {
-    width: 50%;
-
-    display: inline-block;
-    text-align: left;
-}
-
-.mb-socials {
-    /*temp border*/
-    border: 2px solid blue;
+.hero .mb-socials {
+    width: 15%;
+    height: inherit;
 
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-
-    max-width: 3rem;
-    gap: 5px;
-
-    padding: 5px;
+    flex-flow: column nowrap;
+    flex: 0 1 auto;
+    gap: 1.5vh;
 }
 
-.mb-socials img {
-    width: 100%;
-    height: 3rem;
-
-    object-fit: cover;
+.hero .mb-socials > a > img {
+    width: clamp(10px, 7vw, 70px);
+    border-radius: 200px; /*creates a circle instead of box around element*/
+    box-shadow: 3px 3px 10px black; /*adds drop shadow*/
 }
 
-.hero-text {
-    /*temp border*/
-    border: 2px solid yellow;
+.hero .blank {
+    width: 55%;
+    height: inherit;
+}
 
-    width: 35%;
-    justify-content: center;
-    align-items: center;
+.hero .text {
+    width: 30%;
+    height: fit-content;
 
-    background-color: black; /*temporary*/
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column nowrap;
+    flex: 0 1 auto;
+
     color: white;
+    text-shadow: 3px 3px 2px darkgrey;
 
+    padding-right: 5vw;
 }
 
-.hero-text > h1 {
+.hero .text > h1 {
     text-transform: uppercase;
-    font-size: 3.5rem;
+    text-wrap: wrap;
+    font-size: clamp(40px, 8vw, 80px); 
+    /*clamp(lower-bound, current, upper-bound), this allows for text to grow and shrink*/
 }
 
-.hero-text > p {
+.hero .text > p {
     text-transform: capitalize;
-    font-size: 1.5rem;
+    text-wrap: nowrap;
+    text-align: left;
+    font-size: clamp(16px, 2.5vw, 42px);
 }
 
 /*INTRO*/

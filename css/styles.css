@@ -2,6 +2,18 @@
 Note to Self:
 - fonts are temporary at the moment
 - colors may be temporary too for now
+
+TASKS 
+- WORK ON ONE SECTION AT A TIME, IGNORE THE REST
+
+    CURRENT SECTION: HERO 
+    - FIGURE OUT HOW TO ADD METRO BOOMIN BACKGROUND IMAGE TO HERO SECTION
+    - FORMAT THE DIVS PROPERLY (EACH TAKE UP 50% WIDTH)
+        - SOCIAL MEDIA; VERTICALLY ALIGNED IN THE CENTER, HORIZONTALLY JUSTIFIED ON THE LEFT SIDE (ALL IN ONE COLUMN) WITH PADDING ON LEFT
+        - TEXT; VERTICALLY ALIGNED IN THE CENTER, HORIZONTALLY JUSTIFIED ON RIGHT SIDE (METRO BOOMIN (BIG), AKA REAL NAME (SMALL) ) WITH PADDING ON RIGHT
+
+REMEMBER
+- USE MEASUREMENTS THAT WILL BE RESPONSIVE TO ALL DEVICE SIZES (AKA THINK ABOUT USING % OR EM INSTEAD OF JUST PX)
 */
 
 html {
@@ -76,13 +88,19 @@ nav a {
 /*HERO*/
 .hero {
     width: 100%;
-    /*display: attribute*/
+    height: 400px;
+
+    align-items: center;
+    background-image: url("images/metroboomin-hero.jpg");
+
+    padding-top: 50px;
 }
 
-.hero > img {
-    width: 100%;
-    display: flex;
-    object-fit: cover;
+.hero > div {
+    width: 50%;
+
+    display: inline-block;
+    text-align: left;
 }
 
 .mb-socials {

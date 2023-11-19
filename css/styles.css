@@ -5,23 +5,25 @@ Note to Self:
 - can set border of img to 0 to reset alignment options
 - use border radius to round edges
 
-TASKS 
+TASKS: 
 - WORK ON ONE SECTION AT A TIME, IGNORE THE REST
 
-    CURRENT SECTION: RECENT
-    - PROBLEM: LINING OF CAPTIONS GO OVER CONTAINER WHEN VIEWPORT WIDTH IS < 130PX 
-
-    - SHOULD LOOK LIKE HORIZONTAL SCROLL GALLERY
-
+    CURRENT SECTION: INTRO
+    - ENSURE IMAGE AND TEXT ARE REPSONSIVE
+    - CREATE A WAY FOR TEXT TO LOOK APPEALING
+    --------------------------
     PREVIOUS SECTION: HERO 
     - *FIGURE OUT HOW TO ADD METRO BOOMIN BACKGROUND IMAGE TO HERO SECTION
 
+    PREVIOUS SECTION: RECENT
+    - PROBLEM: LINING OF CAPTIONS GO OVER CONTAINER WHEN VIEWPORT WIDTH IS < 130PX
+    --------------------------
     HELD FOR LATER SECTION: NAVIGATION BAR - FIX RESPONSIVENESS 
     - IF VIEWPORT WIDTH IS LESS THAN 700PX, TURN INTO DROPDOWN NAV WITH TABS LISTED VERTICALLY (3 LINE ICON) 
       (MUST USE JAVASCRIPT FOR THIS)
         
-REMEMBER
-- USE MEASUREMENTS THAT WILL BE RESPONSIVE TO ALL DEVICE SIZES (AKA THINK ABOUT USING % OR EM INSTEAD OF JUST PX)
+REMEMBER:
+- USE MEASUREMENTS THAT WILL BE RESPONSIVE TO ALL DEVICE SIZES
 */
 
 * {
@@ -208,62 +210,57 @@ nav > ul > li > a {
 
 /*INTRO*/
 .intro {
-    /*temp border*/
-    border: 2px solid green;
-
     width: 100%;
+
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: center;
 
-    padding: 25px;
+    padding: 10vh 0;
 }
 
-.image {
-    /*temp border*/
-    border: 2px solid purple;
+.intro-card {
+    width: 80%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+.intro-card .image {
     width: 40%;
-    justify-content: flex-start;
 
-    padding: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
-.image img {
+.intro-card .image img{
     width: 100%;
-}
-
-.textbox {
-    /*temp border*/
-    border: 2px solid purple;
-    width: 60%;
-    align-items: center;
+    object-fit: cover;
 
     padding: 10px;
+}
+
+.intro-card .text {
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    color: white;
+
+    padding: 2vh 2vw;
 }
 
 /*TIMELINE*/
-.timeline {
-    /*temp border*/
-    border: 2px solid green;
-
-    padding: 10px;
-}
 
 /*IMPACT*/
-.impact {
-    /*temp border*/
-    border: 2px solid green;
-
-    padding: 10px;
-}
 
 /*QUOTES*/
-.quotes {
-    /*temp border*/
-    border: 2px solid green;
-
-    padding: 10px;
-}
 
 /*FOOTER*/
 footer {
@@ -279,8 +276,6 @@ footer {
     color: white;
     
     padding: 5px 10px;
-
-    margin-top: 10px;
 }
 
 footer img {

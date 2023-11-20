@@ -8,15 +8,22 @@ Note to Self:
 TASKS: 
 - WORK ON ONE SECTION AT A TIME, IGNORE THE REST
 
-    CURRENT SECTION: INTRO
-    - ENSURE IMAGE AND TEXT ARE REPSONSIVE
-    - CREATE A WAY FOR TEXT TO LOOK APPEALING
+    CURRENT SECTION: TIMELINE
+    - FIGURE OUT HOW TO ALTERNATE EACH EVENT, ONE BOX COMING FROM LEFT, THE NEXT FROM RIGHT
+        - BOXES TAKE UP ABOUT 70-80% WIDTH OF VIEWPORT
+    - ADD TIME PERIOD, IMAGE AND CAPTION
+        - ALTERNATE IMAGES (RIGHT FIRST THEN LEFT)
+
     --------------------------
     PREVIOUS SECTION: HERO 
     - *FIGURE OUT HOW TO ADD METRO BOOMIN BACKGROUND IMAGE TO HERO SECTION
 
     PREVIOUS SECTION: RECENT
     - PROBLEM: LINING OF CAPTIONS GO OVER CONTAINER WHEN VIEWPORT WIDTH IS < 130PX
+    
+    PREVIOUS SECTION: INTRO 
+    - CREATE A WAY FOR THE PARAGRAPH TO LOOK APPEALING
+    - IMAGE SHOULD BE RESPONSIVE FOR MOBILE PHONE DEVICE
     --------------------------
     HELD FOR LATER SECTION: NAVIGATION BAR - FIX RESPONSIVENESS 
     - IF VIEWPORT WIDTH IS LESS THAN 700PX, TURN INTO DROPDOWN NAV WITH TABS LISTED VERTICALLY (3 LINE ICON) 
@@ -223,7 +230,7 @@ nav > ul > li > a {
     height: fit-content;
 
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 
@@ -256,7 +263,47 @@ nav > ul > li > a {
     padding: 2vh 2vw;
 }
 
+.intro-card .text h2 {
+    font-size: 2rem;
+}
+
+.intro-card .text p {
+    font-size: 1rem;
+}
+
 /*TIMELINE*/
+.timeline {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    background-color: black;
+}
+
+.timeline > h2 {
+    color: white;
+    text-align: center;
+}
+
+.timeline .left{
+    width: 80vw;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    background-color: rgb(255, 200, 200);
+}
+
+.timeline .right {
+    width: 80vw;
+
+    display: flex;
+    justify-content: flex-end;
+
+    background-color: rgb(200, 255, 255);
+}
 
 /*IMPACT*/
 

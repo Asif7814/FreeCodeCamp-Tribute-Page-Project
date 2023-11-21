@@ -9,8 +9,6 @@ TASKS:
 - WORK ON ONE SECTION AT A TIME, IGNORE THE REST
 
     CURRENT SECTION: TIMELINE
-    - FIGURE OUT HOW TO ALTERNATE EACH EVENT, ONE BOX COMING FROM LEFT, THE NEXT FROM RIGHT
-        - BOXES TAKE UP ABOUT 70-80% WIDTH OF VIEWPORT
     - ADD TIME PERIOD, IMAGE AND CAPTION
         - ALTERNATE IMAGES (RIGHT FIRST THEN LEFT)
 
@@ -47,6 +45,16 @@ html {
 
 body {
     width: 100%;
+}
+
+h2 {
+    text-align: center;
+    
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
 }
 
 /*NAVIGATION BAR*/
@@ -264,7 +272,7 @@ nav > ul > li > a {
 }
 
 .intro-card .text h2 {
-    font-size: 2rem;
+    text-align: left;
 }
 
 .intro-card .text p {
@@ -277,35 +285,68 @@ nav > ul > li > a {
 
     display: flex;
     flex-flow: column nowrap;
+    gap: 15px;
 
     background-color: black;
+
+    padding: 5vh 0;
 }
 
 .timeline > h2 {
     color: white;
-    text-align: center;
+
+    padding-bottom: 2vh;
 }
 
-.timeline .left{
+.timeline-event {
     width: 80vw;
+    height: 50vh;
 
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
 
-    background-color: rgb(255, 200, 200);
+    background-color: rgb(110, 15, 15);
+    color: white;
+
+    padding: 0 2vw;
 }
 
-.timeline .right {
-    width: 80vw;
+.timeline-event[id="left"] {
+    align-self: flex-start;
+}
+
+.timeline-event[id="right"] {
+    align-self: flex-end;
+} 
+
+.timeline-event > .event-title {
+    width: 60%;
+
+    padding: 0 1.5vw;
+
+    border-left: 1px solid white;
+}
+
+.timeline-event > .images {
+    width: 40%;
+    height: inherit;
 
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /*in this case, this centers horizontally since main-axis is a column*/
 
-    background-color: rgb(200, 255, 255);
+    padding: 0 1.5vw;
+
+    border-left: 1px solid white;
 }
 
 /*IMPACT*/
+.impact {
+    padding: 1vw 3vw 1vw 3vw;
+}
+
 
 /*QUOTES*/
 

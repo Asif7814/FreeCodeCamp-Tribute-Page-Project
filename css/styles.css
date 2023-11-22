@@ -341,9 +341,23 @@ nav > ul > li > a {
     justify-content: center;
     align-items: center; /*in this case, this centers horizontally since main-axis is a column*/
 
-    padding: 0 1.5vw;
+    padding: 1vh 1vw 1vh 2vw;
 
     border-left: 1px solid white;
+}
+
+.timeline-event > .images > img {
+    width: 100%;
+    height: 70%;
+
+    object-fit: cover;
+}
+
+.timeline-event > .images > figcaption {
+    width: 100%;
+    height: 30%;
+
+    text-align: center;
 }
 
 /*IMPACT*/
@@ -400,23 +414,31 @@ nav > ul > li > a {
 
 /*FOOTER*/
 footer {
-    display: block;
-
-    justify-content: center;
-    align-items: center;
-
     width: 100%;
     height: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
     background-color: black;
     color: white;
-    
-    padding: 5px 10px;
+}
+
+footer > .my-socials {
+    width: inherit;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    padding-bottom: 5px;
 }
 
 footer img {
-    width: 25px;
-    height: 25px;
-
-    gap: 5px;
+    width: 30px;
+    height: 30px;
 }

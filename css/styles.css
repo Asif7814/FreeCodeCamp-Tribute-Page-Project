@@ -29,7 +29,7 @@ TASKS:
     --------------------------
     HELD FOR LATER SECTION: NAVIGATION BAR - FIX RESPONSIVENESS 
     - IF VIEWPORT WIDTH IS LESS THAN 700PX, TURN INTO DROPDOWN NAV WITH TABS LISTED VERTICALLY (3 LINE ICON) 
-      (MUST USE JAVASCRIPT FOR THIS)
+      (MUST USE JAVASCRIPT FOR THIS) (USING PURE CSS COULD MAYBE WORK TOO?)
         
 REMEMBER:
 - USE MEASUREMENTS THAT WILL BE RESPONSIVE TO ALL DEVICE SIZES
@@ -367,6 +367,11 @@ nav > ul > li > a {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    gap: 10px;
+
+    background-color:lightgray; 
+
+    padding: 3vh 1vw;
 }
 
 .impact-gallery > figure {
@@ -375,13 +380,23 @@ nav > ul > li > a {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
-
-    border: 2px solid green;
 }
 
-/*QUOTES*/
+.impact-gallery > figure > img{
+    width: 100%;
+    height: 80%;
+
+    object-fit: cover;
+}
+
+.impact-gallery > figure > figcaption {
+    width: 100%;
+    height: 20%;
+
+    text-align: center;
+}
 
 /*FOOTER*/
 footer {
